@@ -1,0 +1,34 @@
+using System;
+
+abstract class ElectricalAppliance
+{
+    public abstract void TurnOn();
+}
+
+class Lamp : ElectricalAppliance
+{
+    public override void TurnOn()
+    {
+        Console.WriteLine("Лампа сейчас включена.");
+    }
+}
+
+class Fan : ElectricalAppliance
+{
+    public override void TurnOn()
+    {
+        Console.WriteLine("Вентилятор в данный моментвключен");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        ElectricalAppliance lamp = new Lamp();
+        lamp.TurnOn();
+
+        ElectricalAppliance fan = new Fan();
+        fan.TurnOn();
+    }
+}
