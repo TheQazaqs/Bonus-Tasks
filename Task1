@@ -1,0 +1,39 @@
+using System;
+class Task1
+{
+    static void PrintDiamond(int height)
+    {
+        int space = height - 1;
+
+        for (int i = 1; i <= height; i++)
+        {
+            for (int j = 1; j <= space; j++)
+                Console.Write(" ");
+            space--;
+
+            for (int j = 1; j <= 2 * i - 1; j++)
+                Console.Write("*");
+            Console.WriteLine();
+        }
+
+        space = 1;
+
+        for (int i = height - 1; i > 0; i--)
+        {
+            for (int j = 1; j <= space; j++)
+                Console.Write(" ");
+            space++;
+
+            for (int j = 1; j <= 2 * i - 1; j++)
+                Console.Write("*");
+            Console.WriteLine();
+        }
+    }
+
+    static void Main()
+    {
+        Console.Write("Введите высоту ромба: ");
+        int height = int.Parse(Console.ReadLine());
+        PrintDiamond(height);
+    }
+}
